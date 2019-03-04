@@ -1,0 +1,39 @@
+{
+    "name": "ericlagarda/nova-embed",
+    "description": "Embed field for Laravel Nova",
+    "keywords": [
+        "laravel",
+        "nova",
+        "embed"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric Lagarda",
+            "email": "eric@infinety.es",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "embed/embed": "^3.3",
+        "laravel/nova": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ericlagarda\\NovaEmbed\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ericlagarda\\NovaEmbed\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
