@@ -1,8 +1,8 @@
 <?php
 
-namespace Ericlagarda\NovaEmbed;
+namespace EricLagarda\NovaEmbed;
 
-use Ericlagarda\NovaEmbed\Invokes\NovaEmbedData;
+use EricLagarda\NovaEmbed\Invokes\NovaEmbedData;
 use Laravel\Nova\Fields\Field;
 
 class Embed extends Field

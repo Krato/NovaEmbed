@@ -1,6 +1,6 @@
 <?php
 
-namespace Ericlagarda\NovaEmbed\Invokes;
+namespace EricLagarda\NovaEmbed\Invokes;
 
 use Embed\Embed;
 use Embed\Exceptions\InvalidUrlException;

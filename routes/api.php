@@ -1,5 +1,5 @@
 <?php
 
-use Ericlagarda\NovaEmbed\Invokes\NovaEmbedData;
+use EricLagarda\NovaEmbed\Invokes\NovaEmbedData;
 
 Route::get('/embed', NovaEmbedData::class);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ericlagarda\NovaEmbed;
+namespace EricLagarda\NovaEmbed;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;

@@ -1,6 +1,6 @@
 # Nova Embed 
 
-Embed field for Laravel Nova. Uses [Oscarotero Embed](https://github.com/oscarotero/Embed) to get the data
+Embed field for Laravel Nova. With this package you can embed from Youtube, Vimeo, Facebook, DailyMotion, SoundCloud, Instagram and a lot of more. Uses [Oscarotero Embed](https://github.com/oscarotero/Embed) to get the data.
 
 ![preview](https://user-images.githubusercontent.com/74367/53722300-807ff800-3e65-11e9-8675-bd28ba33a4e1.png)
 
@@ -19,6 +19,8 @@ Then, register your new field in the `fields` method of the `Resource` class.
 
 ```php
 
+use EricLagarda\NovaEmbed\Embed;
+
 public function fields()
 {
     return [
@@ -29,6 +31,11 @@ public function fields()
     ];
 }
 ```
+
+
+## Update
+
+Please change your namespace: `Ericlagarda` to `EricLagarda`
 
 ## Field options
 

@@ -21,13 +21,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Ericlagarda\\NovaEmbed\\": "src/"
+            "EricLagarda\\NovaEmbed\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Ericlagarda\\NovaEmbed\\FieldServiceProvider"
+                "EricLagarda\\NovaEmbed\\FieldServiceProvider"
             ]
         }
     },
