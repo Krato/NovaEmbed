@@ -41,6 +41,7 @@ Please change your namespace: `Ericlagarda` to `EricLagarda`
 
 * `->ajax()`: Load the embed with ajax. By default loads with the field
 * `->cache()`: You can set the time of the cache. By default a month.
+* `->viewInIndex()`: Click on the image to open a modal with the embed.
 
 Cache will set a month in minutes for Laravel 5.7 and below, and a month in seconds for Laravel 5.8 and up.
 

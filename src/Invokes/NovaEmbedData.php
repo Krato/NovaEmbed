@@ -28,8 +28,9 @@ class NovaEmbedData
             });
 
             return [
-                'code'  => $embed->code,
-                'image' => $embed->image,
+                'code'   => $embed->code,
+                'image'  => $embed->image,
+                'aspect' => $embed->aspectRatio,
             ];
         }
 

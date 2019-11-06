@@ -27,6 +27,7 @@ class Embed extends Field
         parent::__construct($name, $attribute, $resolveCallback);
 
         $this->withMeta(['ajax' => false]);
+        $this->withMeta(['viewInIndex' => false]);
     }
 
     /**
@@ -47,6 +48,16 @@ class Embed extends Field
     public function cache($time)
     {
         return $this->withMeta(['time' => $time]);
+    }
+
+    /**
+     * Set the cache time
+     *
+     * @param $time
+     */
+    public function viewInIndex()
+    {
+        return $this->withMeta(['viewInIndex' => true]);
     }
 
     /**

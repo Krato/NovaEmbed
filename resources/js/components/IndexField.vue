@@ -1,17 +1,45 @@
 <template>
     <p v-if="field.value">
-        <img v-if="loaded && image" :src="image" style="object-fit: cover;" class="rounded-full w-8 h-8" />
-        <span v-else>&mdash;</span>
+
+        <template v-if="field.viewInIndex">
+
+            <img v-if="loaded && image" :src="image" style="object-fit: cover;" class="rounded-full w-8 h-8 cursor-pointer" @click="showPreview" :title="this.__('Click to Preview')" :alt="this.__('Click to Preview')" />
+
+            <span v-else>
+                <loader width="30" class="ml-0" />
+            </span> 
+
+        </template>
+
+        <template v-else>
+             <img v-if="loaded && image" :src="image" style="object-fit: cover;" class="rounded-full w-8 h-8" />
+
+            <span v-else>
+                <loader width="30" class="ml-0" />
+            </span> 
+
+        </template>
+
+
+        <modal-show :active="showModal" :field="field" v-on:closePreviewModal="closeModal"></modal-show>
     </p>
 </template>
 
 <script>
+
+import ModalShow from './ModalShow';
+
 export default {
     props: ['resourceName', 'field'],
+
+    components: {
+        'modal-show':ModalShow
+    },
 
     data: () => ({
         loaded: false,
         image: null,
+        showModal: false
     }),
 
     methods: {
@@ -53,6 +81,14 @@ export default {
             ); // fragment locator
             return !!pattern.test(str);
         },
+
+        showPreview() {
+            this.showModal = true;
+        },
+
+        closeModal() {
+            this.showModal = false;
+        }
     },
 
     mounted() {
