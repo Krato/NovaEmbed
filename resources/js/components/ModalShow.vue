@@ -52,7 +52,6 @@ export default {
                     if (response.data) {
                         this.source = response.data.code;
                         this.aspectRatio = response.data.aspect;
-                        console.log(response.data)
                     }
                 });
 
@@ -74,7 +73,6 @@ export default {
     watch: {
 
         active: function (value) {
-            console.log(value)
             if (value == true) {
                 this.loadSource();
             }

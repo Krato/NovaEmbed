@@ -1,7 +1,10 @@
 <template>
     <panel-item :field="field">
         <template slot="value" v-if="loaded">
-            <div class="w-full" v-html="code"></div>
+            <template v-if="failed">
+                <span class="pl-2">&mdash;</span>
+            </template>
+            <div class="w-full" v-html="code" v-else></div>
         </template>
     </panel-item>
 </template>
@@ -13,12 +16,14 @@ export default {
     data: () => ({
         loaded: false,
         code: null,
+        failed: false
     }),
 
     methods: {
         loadImage() {
             if (!this.validURL(this.field.value)) {
                 this.loaded = true;
+                this.failed = true;
                 return;
             }
 
@@ -28,7 +33,13 @@ export default {
                 })
                 .then(response => {
                     if (response.data) {
-                        this.code = response.data.code;
+                        if (response.data.code != null) {
+                            this.code = response.data.code;    
+                        } else {
+                            this.failed = true;
+                        }
+                    } else {
+                        this.failed = true;
                     }
                     this.loaded = true;
                 });

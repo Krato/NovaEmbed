@@ -20,7 +20,6 @@ class FieldServiceProvider extends ServiceProvider
 
         Nova::serving(function (ServingNova $event) {
             Nova::script('nova-embed', __DIR__.'/../dist/js/field.js');
-            Nova::style('nova-embed', __DIR__.'/../dist/css/field.css');
         });
     }
 
