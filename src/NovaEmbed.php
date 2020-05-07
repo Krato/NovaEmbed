@@ -5,7 +5,7 @@ namespace EricLagarda\NovaEmbed;
 use EricLagarda\NovaEmbed\Invokes\NovaEmbedData;
 use Laravel\Nova\Fields\Field;
 
-class Embed extends Field
+class NovaEmbed extends Field
 {
     /**
      * The field's component.
