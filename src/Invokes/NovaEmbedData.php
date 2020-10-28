@@ -23,7 +23,7 @@ class NovaEmbedData
                 try {
                     return Embed::create($url);
                 } catch (InvalidUrlException $e) {
-                    return (object) ['code' => null, 'image' => null];
+                    return (object) ['code' => null, 'image' => null, 'aspectRatio' => null];
                 }
             });
 
