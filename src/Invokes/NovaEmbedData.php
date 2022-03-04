@@ -19,19 +19,19 @@ class NovaEmbedData
         $time = $cacheTime ?? $this->getCache($request);
 
         if ($url && $this->checkValidUrl($url)) {
-            $embed = cache()->remember(md5($url), $time, function () use ($url) {
+            return cache()->remember(md5($url), $time, function () use ($url) {
                 try {
-                    return Embed::create($url);
+                    $embed = Embed::create($url);
+
+                    return [
+                        'code'   => $embed->code,
+                        'image'  => $embed->image,
+                        'aspect' => $embed->aspectRatio,
+                    ];
                 } catch (InvalidUrlException $e) {
                     return (object) ['code' => null, 'image' => null, 'aspectRatio' => null];
                 }
             });
-
-            return [
-                'code'   => $embed->code,
-                'image'  => $embed->image,
-                'aspect' => $embed->aspectRatio,
-            ];
         }
 
         return null;
